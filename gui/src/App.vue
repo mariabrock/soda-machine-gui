@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <InsertCoins />
+      <SalesBox />
+      <CocaCola />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SalesBox from './components/SalesBox.vue'
+import InsertCoins from './components/InsertCoins.vue'
+import CocaCola from './components/CocaCola.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SalesBox,
+    InsertCoins,
+    CocaCola
   }
 }
 </script>
