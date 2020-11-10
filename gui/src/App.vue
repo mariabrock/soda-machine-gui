@@ -2,7 +2,26 @@
   <div id="app">
       <InsertCoins />
       <SalesBox />
-      <CocaCola />
+
+      <b-container class="soda-grid">
+        <b-row>
+          <b-col>
+            <CocaCola />
+            <DrPepper />
+          </b-col>
+
+          <b-col>
+            <JonesSoda />
+            <LaCroix />
+          </b-col>
+
+          <b-col>
+            <MtDew />
+            <Pepsi />
+          </b-col>
+        </b-row>
+      </b-container> 
+      
   </div>
 </template>
 
@@ -10,13 +29,24 @@
 import SalesBox from './components/SalesBox.vue'
 import InsertCoins from './components/InsertCoins.vue'
 import CocaCola from './components/CocaCola.vue'
+import DrPepper from './components/DrPepper.vue'
+import JonesSoda from './components/JonesSoda.vue'
+import LaCroix from './components/LaCroix.vue'
+import MtDew from './components/MtDew.vue'
+import Pepsi from './components/Pepsi.vue'
+
 
 export default {
   name: 'App',
   components: {
     SalesBox,
     InsertCoins,
-    CocaCola
+    CocaCola,
+    DrPepper,
+    JonesSoda,
+    LaCroix,
+    MtDew,
+    Pepsi
   }
 }
 </script>
