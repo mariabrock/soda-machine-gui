@@ -11,9 +11,20 @@
     >
       <b-card-text>
         That's what I like!
+        <p>price: $0.75</p>
       </b-card-text>
 
       <b-button href="#" variant="primary">Purchase</b-button>
     </b-card>
   </div>
 </template>
+
+<style scoped>
+  .card {
+    background: royalblue;
+    
+  }
+  .card-text, .card-title {
+    color: white;
+  }
+</style>

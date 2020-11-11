@@ -35,6 +35,8 @@ import LaCroix from './components/LaCroix.vue'
 import MtDew from './components/MtDew.vue'
 import Pepsi from './components/Pepsi.vue'
 
+import firebase from "firebase";
+// const db = firebase.database();
 
 export default {
   name: 'App',
@@ -47,12 +49,42 @@ export default {
     LaCroix,
     MtDew,
     Pepsi
+  },
+  mounted() {
+    fetch("https://soda-machine-gui.firebaseio.com", {
+      method: 'get'
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      this.sodas = data.results
+      this.buyer = data.results
+    })
+  },
+  data() {
+    return {
+      "amount": null,
+      "uid": null,
+      "hasQuarters" : null,
+      "isSoldOut" : null,
+      "numofQuarters": 0,
+      "buttonPressed": false,
+      "soldASoda": false
+    }
+  },
+  methods: {
+    getSodas() {
+      firebase
+        .db()
+    }
   }
 }
 </script>
 
 <style>
-#app {
+html body #app {
+  background-color: lightslategray;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

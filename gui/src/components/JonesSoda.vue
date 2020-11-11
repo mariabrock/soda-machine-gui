@@ -11,9 +11,20 @@
     >
       <b-card-text>
         "Run with the little guy… create some change."
+        <p>price: $0.75</p>
       </b-card-text>
 
       <b-button href="#" variant="primary">Purchase</b-button>
     </b-card>
   </div>
 </template>
+
+<style scoped>
+  .card {
+    background: dodgerblue;
+    
+  }
+  .card-text, .card-title {
+    color: white;
+  }
+</style>
