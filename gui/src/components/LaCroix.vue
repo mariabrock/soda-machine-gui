@@ -11,9 +11,20 @@
     >
       <b-card-text>
         #LiveLaCroix
+        <p>price: $0.75</p>
       </b-card-text>
 
       <b-button href="#" variant="primary">Purchase</b-button>
     </b-card>
   </div>
 </template>
+
+<style scoped>
+  .card {
+    background: salmon;
+    
+  }
+  .card-text, .card-title {
+    color: white;
+  }
+</style>

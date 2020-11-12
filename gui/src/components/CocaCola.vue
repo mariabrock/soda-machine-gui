@@ -11,14 +11,28 @@
     >
       <b-card-text>
         Together Tastes Better
+        <p>price: $0.75</p>
       </b-card-text>
 
-      <b-button href="#" variant="primary">Purchase</b-button>
+      <b-button @click="purchaseSoda" variant="primary">Purchase</b-button>
     </b-card>
   </div>
 </template>
 
-export default {
-  name: 'CocaCola',
+<style scoped>
+  .card {
+    background: black;
+    
+  }
+  .card-text, .card-title {
+    color: white;
+  }
+</style>
 
+<script>
+export default {
+  props: {
+    numofQuarters: null
+  }
 }
+</script>
