@@ -2,6 +2,7 @@
   "buyer": {
     "numofQuarters": 0,
     "buttonPressed": false,
-    "soldASoda": false
+    "soldASoda": false,
+    "buyerId": 1234
   }
 }
