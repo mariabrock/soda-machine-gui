@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-      <div id="quarter-btn">
-        <b-button @click="increment" variant="primary">Add A Quarter</b-button>
-        <p>Total Quarters: {{ addQuarter }}</p>
+      <div id="buttons">
+        <b-button id="btn-dispense" @click="deincrement" variant="danger">Dispense Quarter</b-button>
+        <b-button id="btn-increase" @click="increment" variant="primary">Add A Quarter</b-button>
+        <p>Total Quarters: {{ totalQuarters }}</p>
       </div>
 
       <b-container class="soda-grid">
         <b-row>
           <b-col>
-            <CocaCola />
+            <CocaCola
+              
+             />
             <DrPepper />
           </b-col>
 
@@ -36,12 +39,6 @@ import LaCroix from './components/LaCroix.vue'
 import MtDew from './components/MtDew.vue'
 import Pepsi from './components/Pepsi.vue'
 
-// import firebase from 'firebase'
-// import "firebase/database";
-
-// const database = firebase.initializeApp(config);
-// const db = firebase.database();
-
 export default {
   name: 'App',
   components: {
@@ -52,36 +49,58 @@ export default {
     MtDew,
     Pepsi
   },
-  mounted() {
-
-  },
   data() {
     return {
-      addQuarter: 0
+      totalQuarters: 0,
+      sodaData: []
     }
   },
+  // mounted() {
+  //   const database = this.$firebase.firestore();
+  //     database
+  //     .collection('test')
+  //     .get()
+  //     .then(snap => {
+  //       const sodaData = [];
+  //       snap.forEach(soda => {
+  //         sodaData.push({ [soda.sodaId] : soda.data});
+  //       })
+  //       this.sodaData = sodaData;
+  //     })
+  // },
   methods: {
-    increment(addQuarter) {
-      if (addQuarter) {
-        this.addQuarter++ 
+    increment(totalQuarters) {
+      if (totalQuarters) {
+        this.totalQuarters++ 
       }
-      console.log(addQuarter)
-    },
-  //   purchaseSoda() {
-    
-  // }
+      this.totalQuarters
+      console.log(totalQuarters)
+    }
+  },
+  deincrement(totalQuarters) {
+    if (totalQuarters) {
+        this.totalQuarters-- 
+      }
+      this.totalQuarters
+      console.log(totalQuarters)
   }
 }
 </script>
 
 <style>
-html body #app {
+html {
   background-color: lightslategray;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+#app {
+  background-color: lightslategray;
+  font-family:'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.btn {
+  margin-right: 1rem;
 }
 </style>

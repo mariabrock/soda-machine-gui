@@ -14,10 +14,24 @@
        <p>price: $0.75</p>
       </b-card-text>
 
-      <b-button href="#" variant="primary">Purchase</b-button>
+      <b-button href="#" variant="primary" disabled>Purchase</b-button>
+
+      <h1 v-if="amount === 0">SOLD OUT</h1>
+
     </b-card>
   </div>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      amount: 0 
+    }
+  }
+}
+</script>
 
 <style scoped>
   .card {
@@ -26,5 +40,9 @@
   }
   .card-text, .card-title {
     color: white;
+  }
+  h1 {
+    color: yellow;
+    margin-top: 1rem;
   }
 </style>

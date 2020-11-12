@@ -15,9 +15,22 @@
       </b-card-text>
 
       <b-button href="#" variant="primary">Purchase</b-button>
+
+      <h1 v-if="amount === 0">SOLD OUT</h1>
     </b-card>
   </div>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      amount: 16 
+    }
+  }
+}
+</script>
 
 <style scoped>
   .card {

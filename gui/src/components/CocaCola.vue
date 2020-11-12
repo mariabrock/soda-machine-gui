@@ -14,7 +14,18 @@
         <p>price: $0.75</p>
       </b-card-text>
 
-      <b-button @click="purchaseSoda" variant="primary">Purchase</b-button>
+      <b-button 
+      variant="primary" 
+      @click="purchaseSoda"
+      :totalQuarters="totalQuarters" 
+      :amount="amount"
+      :disabled="totalQuarters < 3 || amount === 0"
+      >
+        Purchase
+      </b-button>
+
+      <h1 v-if="amount === 0">SOLD OUT</h1>
+
     </b-card>
   </div>
 </template>
@@ -30,9 +41,28 @@
 </style>
 
 <script>
+
 export default {
   props: {
-    numofQuarters: null
+    increment: Function,
+    totalQuarters: Number
+  },
+  data() {
+    return {
+      amount: 15 
+    }
+  },
+  methods: {
+    purchaseSoda(amount) {
+      if (amount > 0) {
+        this.amount--
+      }
+    }
+  },
+  watch: {
+    totalQuarters() {
+      
+    }
   }
 }
 </script>
