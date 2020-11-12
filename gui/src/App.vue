@@ -36,7 +36,10 @@ import LaCroix from './components/LaCroix.vue'
 import MtDew from './components/MtDew.vue'
 import Pepsi from './components/Pepsi.vue'
 
-// import firebase from "firebase";
+// import firebase from 'firebase'
+// import "firebase/database";
+
+// const database = firebase.initializeApp(config);
 // const db = firebase.database();
 
 export default {
@@ -50,15 +53,7 @@ export default {
     Pepsi
   },
   mounted() {
-    fetch("https://soda-machine-gui.firebaseio.com", {
-      method: 'get'
-    })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      this.sodas = data.results
-    })
+
   },
   data() {
     return {

@@ -2,42 +2,42 @@
   "soda1": {
     "name": "Coca-Cola",
     "amount": 15,
-    "uid": "0",
+    "sodaId": "0",
     "hasQuarters" : false,
     "isSoldOut" : false
   },
   "soda2": {
     "name": "Dr Pepper",
     "amount": 16,
-    "uid": "1",
+    "sodaId": "1",
     "hasQuarters" : false,
     "isSoldOut" : false
   },
   "soda3": {
     "name": "Jones Soda",
     "amount": 39,
-    "uid": "2",
+    "sodaId": "2",
     "hasQuarters" : false,
     "isSoldOut" : false
   },
   "soda4": {
     "name": "LaCroix",
     "amount": 46,
-    "uid": "3",
+    "sodaId": "3",
     "hasQuarters" : false,
     "isSoldOut" : false
   },
   "soda5": {
     "name": "Mountain Dew",
     "amount": 0,
-    "uid": "4",
+    "sodaId": "4",
     "hasQuarters" : false,
     "isSoldOut" : true
   },
   "soda6": {
     "name": "Pepsi",
     "amount": 17,
-    "uid": "5",
+    "sodaId": "5",
     "hasQuarters" : false,
     "isSoldOut" : false
   }

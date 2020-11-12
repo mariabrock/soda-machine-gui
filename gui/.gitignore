@@ -1,4 +1,4 @@
-/src/components/firestore.js
+/src/data/apiKeys.json
 
 .DS_Store
 node_modules
