@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-      <InsertCoins />
-      <SalesBox />
+      <div id="quarter-btn">
+        <b-button @click="increment" variant="primary">Add A Quarter</b-button>
+        <p>Total Quarters: {{ addQuarter }}</p>
+      </div>
 
       <b-container class="soda-grid">
         <b-row>
@@ -26,8 +28,7 @@
 </template>
 
 <script>
-import SalesBox from './components/SalesBox.vue'
-import InsertCoins from './components/InsertCoins.vue'
+
 import CocaCola from './components/CocaCola.vue'
 import DrPepper from './components/DrPepper.vue'
 import JonesSoda from './components/JonesSoda.vue'
@@ -35,14 +36,12 @@ import LaCroix from './components/LaCroix.vue'
 import MtDew from './components/MtDew.vue'
 import Pepsi from './components/Pepsi.vue'
 
-import firebase from "firebase";
+// import firebase from "firebase";
 // const db = firebase.database();
 
 export default {
   name: 'App',
   components: {
-    SalesBox,
-    InsertCoins,
     CocaCola,
     DrPepper,
     JonesSoda,
@@ -59,25 +58,23 @@ export default {
     })
     .then((data) => {
       this.sodas = data.results
-      this.buyer = data.results
     })
   },
   data() {
     return {
-      "amount": null,
-      "uid": null,
-      "hasQuarters" : null,
-      "isSoldOut" : null,
-      "numofQuarters": 0,
-      "buttonPressed": false,
-      "soldASoda": false
+      addQuarter: 0
     }
   },
   methods: {
-    getSodas() {
-      firebase
-        .db()
-    }
+    increment(addQuarter) {
+      if (addQuarter) {
+        this.addQuarter++ 
+      }
+      console.log(addQuarter)
+    },
+  //   purchaseSoda() {
+    
+  // }
   }
 }
 </script>

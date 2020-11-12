@@ -19,11 +19,6 @@
   </div>
 </template>
 
-export default {
-  name: 'CocaCola',
-
-}
-
 <style scoped>
   .card {
     background: black;
@@ -33,3 +28,11 @@ export default {
     color: white;
   }
 </style>
+
+<script>
+export default {
+  props: {
+    numofQuarters: null
+  }
+}
+</script>
