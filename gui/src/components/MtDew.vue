@@ -41,4 +41,8 @@ export default {
   .card-text, .card-title {
     color: white;
   }
+  h1 {
+    color: yellow;
+    margin-top: 1rem;
+  }
 </style>
